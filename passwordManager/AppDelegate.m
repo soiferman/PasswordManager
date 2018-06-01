@@ -15,10 +15,10 @@
 
 @implementation AppDelegate
 
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentContainer = _persistentContainer;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+//@synthesize managedObjectContext = _managedObjectContext;
+//@synthesize managedObjectModel = _managedObjectModel;
+//@synthesize persistentContainer = _persistentContainer;
+//@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
