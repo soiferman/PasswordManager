@@ -29,6 +29,10 @@
     self.usernameTextField.delegate = self;
     self.passwordTextField.delegate = self;
     
+    //Automatically copy password textfield to clipboard
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = self.passwordTextField.text;
+    
     CGSize hideShowSize = [@"SHOWX" sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0f]}];
     UIButton *hideShow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, hideShowSize.width, self.passwordTextField.frame.size.height)];
     [hideShow setImage:[UIImage imageNamed:@"iconEyesOpen"] forState:UIControlStateNormal];
@@ -38,17 +42,13 @@
     
 }
 
-- (void)hideShow:(id)sender
-{
+- (void)hideShow:(id)sender {
     UIButton *hideShow = (UIButton *)self.passwordTextField.rightView;
-    if (!self.passwordTextField.secureTextEntry)
-    {
+    if (!self.passwordTextField.secureTextEntry) {
         self.passwordTextField.secureTextEntry = YES;
         [hideShow setImage:[UIImage imageNamed:@"iconEyesOpen"] forState:UIControlStateNormal];
-        
     }
-    else
-    {
+    else {
         self.passwordTextField.secureTextEntry = NO;
         [hideShow setImage:[UIImage imageNamed:@"iconEyesClose"] forState:UIControlStateNormal];
     }
